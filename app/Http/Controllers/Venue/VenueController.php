@@ -77,7 +77,7 @@ class VenueController extends Controller
 
         DB::commit();
 
-        return redirect()->route('venue.index')->with([
+        return redirect()->route('venue.index', array('page' => 2))->with([
             "code" 		        => $this->status_codes['success'],
             'title'             => 'Venue Created!',
             'create_status'     => "Venue  has been created successfully.",
