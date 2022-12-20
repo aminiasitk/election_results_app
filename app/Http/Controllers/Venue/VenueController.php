@@ -42,7 +42,7 @@ class VenueController extends Controller
         return view('venues.create')->with([
             'page_title'        => 'Add Venue',
             'classification'    => $this->venue_class,
-            'areas'             => DB::table('division_areas')->get()
+            'areas'             => DB::table('division_areas')->orderBy('name', 'asc')->get()
         ]);
     }
 
@@ -77,7 +77,7 @@ class VenueController extends Controller
 
         DB::commit();
 
-        return redirect()->route('party.index')->with([
+        return redirect()->route('venue.create')->with([
             "code" 		        => $this->status_codes['success'],
             'title'             => 'Venue Created!',
             'create_status'     => "Venue  has been created successfully.",

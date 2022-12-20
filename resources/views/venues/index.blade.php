@@ -15,6 +15,7 @@
                                 <th>Identifier</th>
                                 <th>Name</th>
                                 <th>Class</th>
+                                <th>District</th>
                                 <th>Area</th>
                                 <th>Created At</th>
                                 <th>Action</th>
@@ -26,6 +27,7 @@
                                     <td><strong>{{ $d->identifier }}</strong></td>
                                     <td>{{ $d->name }}</td>
                                     <td>{{ $classification[$d->class] }}</td>
+                                    <td>{{ $d->district }}</td>
                                     <td>{{ App\Models\Area::find($d->area)->name }}</td>
                                     <td>{{ $d->created_at }}</td>
                                     <td>
